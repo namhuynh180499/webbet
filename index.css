@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.308);
+}
+
+.board {
+  width: 80%;
+  height: auto;
+  padding-bottom: 80px;
+  margin: 10px 10%;
+}
+.board .san {
+  width: 100%;
+  height: 70px;
+  display: flex;
+}
+.board .san .sta {
+  width: 50%;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  padding-top: 15px;
+  color: rgb(236, 234, 234);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.board .san .sta.home {
+  background-color: black;
+  border-top-left-radius: 20px;
+  border-right: solid 1px white;
+}
+.board .san .sta.away {
+  background-color: black;
+  border-top-right-radius: 20px;
+  border-left: solid 1px white;
+}
+.board .match {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  text-align: center;
+  border: solid 1px rgb(172, 161, 161);
+  background-color: rgb(230, 225, 225);
+}
+.board .match .battle {
+  display: flex;
+  height: 50px;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.board .match .battle .team {
+  padding-top: 9px;
+  width: 42%;
+  font-size: 22px;
+}
+.board .match .battle .soi-keo {
+  width: 20%;
+  border-bottom: black;
+  padding-top: 16px;
+  font-size: 16px;
+  color: black;
+  background-color: rgb(230, 225, 225);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.board .match .keo-hiep {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(230, 225, 225);
+}
+.board .match .keo-hiep.checking {
+  display: none;
+}
+.board .match .keo-hiep .keo {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  font-size: 22px;
+  margin: 10px 0;
+  justify-content: space-evenly;
+}
+.board .match .keo-hiep .keo .lai {
+  width: 80px;
+  border: solid 2px rgb(148, 143, 143);
+  border-radius: 4px;
+  padding-top: 3px;
+  font-size: 20px;
+}
+.board .match .keo-hiep .keo .lai:hover {
+  background-color: rgb(179, 71, 8);
+  color: white;
+}
+.board .match .keo-hiep .keo .lai.chon-keo {
+  background-color: rgb(179, 71, 8);
+  color: white;
+}
+.board .match .keo-hiep .keo .keochinh {
+  width: 20%;
+  border: solid 2px rgb(230, 225, 225);
+  padding-top: 2px;
+  font-weight: bolder;
+  color: rgb(179, 71, 8);
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: black;
+  transition: 1s;
+}
+.bottom .vecuoc {
+  width: 20%;
+  height: 100%;
+  margin: 0 40%;
+  background-color: orange;
+  padding-top: 8px;
+  text-align: center;
+}
+.bottom .vecuoc p {
+  width: 100%;
+}
+.bottom .vecuoc h1 {
+  width: 100%;
+}
+.bottom .input-tien {
+  height: 50px;
+  display: flex;
+  background-color: aliceblue;
+  text-align: center;
+}
+.bottom .input-tien .nhap-tien {
+  width: 25%;
+  padding: 9px 0;
+}
+.bottom .input-tien .nhap-tien input {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  font-size: 140%;
+}
+.bottom .input-tien h3 {
+  width: 20%;
+  padding-top: 5px;
+  text-align: center;
+  padding-top: 14px;
+}
+.bottom .input-tien h3.tran {
+  width: 40%;
+  text-align: left;
+  padding-top: 16px;
+  padding-left: 8px;
+  font-size: 16px;
+}
+.bottom .input-tien p {
+  width: 15%;
+  padding-top: 17px;
+  text-align: center;
+  font-weight: bolder;
+  color: green;
+  overflow: hidden;
+}
+.bottom .btn {
+  position: absolute;
+  top: 30px;
+  height: 30px;
+  width: 15%;
+  text-align: center;
+}
+.bottom .btn.btnSub {
+  right: 21%;
+}
+.bottom .btn.btnSub div {
+  width: 100%;
+}
+.bottom .btn.btnDel {
+  right: 4%;
+}
+.bottom .btn.btnDel div {
+  width: 100%;
+}
+.bottom .btn.chu-thich {
+  top: 0;
+  right: 0;
+  width: 40%;
+  color: rgb(211, 211, 16);
+  -webkit-animation: chuthich 1.5s infinite;
+          animation: chuthich 1.5s infinite;
+}
+@-webkit-keyframes chuthich {
+  0% {
+    color: rgb(211, 211, 16);
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: rgb(211, 211, 16);
+  }
+}
+@keyframes chuthich {
+  0% {
+    color: rgb(211, 211, 16);
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: rgb(211, 211, 16);
+  }
+}
+.bottom .btn div {
+  height: 100%;
+  margin: 0 auto;
+  background-color: orange;
+  border: solid 2px grey;
+  border-radius: 5px;
+  padding-top: 3px;
+}
+
+.bang-chu-thich {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.582);
+  padding: 30% 15%;
+  transition: 1s;
+}
+.bang-chu-thich.showing {
+  display: unset;
+}
+.bang-chu-thich .detail {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border: solid 2px rgb(144, 151, 50);
+  position: relative;
+  padding: 30px 10px;
+}
+.bang-chu-thich .detail div {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 50px;
+  height: 30px;
+  background-color: red;
+  text-align: center;
+  padding-top: 6px;
+  font-weight: bolder;
+  border: solid 2px gray;
+}
+.bang-chu-thich .detail p {
+  color: white;
+  margin: 14px 0;
+  font-size: 17px;
+}
+.bang-chu-thich .detail p span {
+  background-color: orange;
+  color: black;
+  font-weight: bolder;
+  padding: 0px 3px;
+  border: solid 2px gray;
+  border-radius: 4px;
+}
+.bang-chu-thich .detail p.donvi {
+  text-align: center;
+  margin-top: -10px;
+  font-weight: bolder;
+  color: rgb(0, 255, 149);
+}/*# sourceMappingURL=index.css.map */
